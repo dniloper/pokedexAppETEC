@@ -25,12 +25,17 @@
 #container a {
   text-decoration: none;
 }
+h3{
+  font-size: 16px;
+  font-weight: bold;
+}
 
 ion-badge{
   margin-right: 5px;
 }
 
-h3{
-  font-size: 16px;
-  font-weight: bold;
+ion-item{
+  width: 95%;
+  border-radius: 15px;
 }
+
