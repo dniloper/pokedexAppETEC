@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>bulbasaur</ion-title>
+  <ion-toolbar color="grass">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="area-pkm">
+    <div class="text-pkm-principal">
+      <ion-label>{{pokemon.nome}}</ion-label>
+    </div>
+    <img class="z-index" [src]="pokemon.foto">
+  </div>
 
+  <ion-label>
+    <ion-chip [color]="pokemon.tipos[0] | lowercase">
+      <ion-label>{{pokemon.numero}}</ion-label>
+    </ion-chip>
+    <div class="info-pkm">
+      <ion-badge *ngFor="let tipo of pokemon.tipos" [color]="tipo | lowercase">{{tipo}}</ion-badge>
+    </div>
+  </ion-label>
 </ion-content>
