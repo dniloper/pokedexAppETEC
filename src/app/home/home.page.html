@@ -18,21 +18,22 @@
     color="{{pokemon.tipos[0] | lowercase}}
     */ -->
 
-    <ion-item *ngFor="let pokemon of listaPokemonsFiltrada" class="ion-no-padding"
-      routerLink="/bulbasaur">
+    <ion-item *ngFor="let pokemon of listaPokemonsFiltrada" lines="full" class="ion-no-padding"
+    (click)="abrirPokemon(pokemon)">
       <ion-thumbnail slot="start">
-        <img [src]="pokemon.foto">
+        <img [src]="pokemon.sprites.front_default">
       </ion-thumbnail>
       <ion-label>
         <div>
-          <h3>{{pokemon.nome}}</h3>
+          <h3>{{pokemon.name | titlecase}}</h3>
           <div >
-            <ion-badge *ngFor="let tipo of pokemon.tipos" [color]="tipo | lowercase">{{tipo}}</ion-badge>
+            <ion-badge *ngFor="let tipo of pokemon.types" [color]="tipo.type.name | lowercase">
+              {{tipo.type.name | titlecase}}</ion-badge>
           </div>
         </div>
       </ion-label>
-      <ion-chip [color]="pokemon.tipos[0] | lowercase">
-        <ion-label>{{pokemon.numero}}</ion-label>
+      <ion-chip [color]="pokemon.types[0].type.name | lowercase">
+        <ion-label>{{pokemon.id}}</ion-label>
       </ion-chip>
     </ion-item>
 

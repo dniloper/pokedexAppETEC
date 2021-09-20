@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'bulbasaur',
     loadChildren: () => import('./pokemons/bulbasaur/bulbasaur.module').then( m => m.BulbasaurPageModule)
   },
+  {
+    path: 'detalhepkm',
+    loadChildren: () => import('./detalhepkm/detalhepkm.module').then( m => m.DetalhepkmPageModule)
+  },
 ];
 
 @NgModule({

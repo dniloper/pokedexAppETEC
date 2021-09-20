@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar [color]="pokemon.types[0].type.name | lowercase">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="area-pkm">
+    <div class="text-pkm-principal">
+      <ion-label>{{pokemon.name}}</ion-label>
+    </div>
+    <img src="{{url + pokemon.id.toString().padStart(3, '0') + '.png'}}" >
+  </div>
+
+  <ion-label>
+    <ion-chip [color]="pokemon.types[0].type.name | lowercase">
+      <ion-label>{{pokemon.id}}</ion-label>
+    </ion-chip>
+    <div class="info-pkm">
+      <ion-badge *ngFor="let tipo of pokemon.types" [color]="tipo.type.name | lowercase">
+        {{tipo.type.name | titlecase}}</ion-badge>
+    </div>
+  </ion-label>
+</ion-content>
